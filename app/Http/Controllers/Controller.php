@@ -9,7 +9,7 @@ use Illuminate\Routing\Controller as BaseController;
 
 /**
  * @OA\Info(
- *     title="Buckhill Assessment API",
+ *     title="Swagger API",
  *     version="0.1",
  * )
  *

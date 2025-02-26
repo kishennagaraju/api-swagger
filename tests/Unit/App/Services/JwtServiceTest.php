@@ -43,7 +43,7 @@ class JwtServiceTest extends BuckhillBaseTesting
         ];
 
         $dataUpt = $data;
-        $dataUpt['email'] = 'test2@buckhill.com';
+        $dataUpt['email'] = 'test2@test.co.uk';
 
         $jwtToken = $this->getJwtService()->generateJwtToken($dataUpt, false);
 
