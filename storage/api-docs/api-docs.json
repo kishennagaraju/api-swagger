@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Buckhill Assessment API",
+        "title": "Swagger API",
         "version": "0.1"
     },
     "paths": {
@@ -119,7 +119,7 @@
                                 "example": {
                                     "first_name": "Test",
                                     "last_name": "Admin",
-                                    "email": "test@buckhill.co.uk",
+                                    "email": "test@test.co.uk",
                                     "password": "password123",
                                     "password_confirmation": "password123",
                                     "avatar": "82110194-fdc6-4872-9adb-4776e28deac3",
@@ -212,7 +212,7 @@
                                 "example": {
                                     "first_name": "Test",
                                     "last_name": "Admin",
-                                    "email": "test@buckhill.co.uk",
+                                    "email": "test@test.co.uk",
                                     "password": "password123",
                                     "password_confirmation": "password123",
                                     "avatar": "82110194-fdc6-4872-9adb-4776e28deac3",
@@ -309,7 +309,7 @@
                                 },
                                 "type": "object",
                                 "example": {
-                                    "email": "admin@buckhill.co.uk",
+                                    "email": "admin@test.co.uk",
                                     "password": "admin"
                                 }
                             }
@@ -379,7 +379,7 @@
                                 },
                                 "type": "object",
                                 "example": {
-                                    "email": "admin@buckhill.co.uk",
+                                    "email": "admin@test.co.uk",
                                     "password": "admin"
                                 }
                             }
@@ -2306,7 +2306,7 @@
                                 "example": {
                                     "first_name": "Test",
                                     "last_name": "User",
-                                    "email": "test@buckhill.co.uk",
+                                    "email": "test@test.co.uk",
                                     "password": "password123",
                                     "password_confirmation": "password123",
                                     "avatar": "82110194-fdc6-4872-9adb-4776e28deac3",
@@ -2399,7 +2399,7 @@
                                 "example": {
                                     "first_name": "Test",
                                     "last_name": "Admin",
-                                    "email": "test@buckhill.co.uk",
+                                    "email": "test@test.co.uk",
                                     "password": "password123",
                                     "password_confirmation": "password123",
                                     "avatar": "82110194-fdc6-4872-9adb-4776e28deac3",
@@ -2553,7 +2553,7 @@
                                 },
                                 "type": "object",
                                 "example": {
-                                    "email": "test@buckhill.co.uk"
+                                    "email": "test@test.co.uk"
                                 }
                             }
                         }
@@ -2609,7 +2609,7 @@
                                 "type": "object",
                                 "example": {
                                     "token": "MV3XsE3dAYkQHFuc7mRyw2absoAdptl5uUTLLUkrZVmD3EjjDk",
-                                    "email": "test@buckhill.co.uk",
+                                    "email": "test@test.co.uk",
                                     "password": "admin1234",
                                     "password_confirmation": "admin1234"
                                 }

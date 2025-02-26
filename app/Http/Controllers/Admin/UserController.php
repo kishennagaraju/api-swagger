@@ -113,7 +113,7 @@ class UserController extends Controller
      *                 example={
      *                      "first_name": "Test",
      *                      "last_name": "Admin",
-     *                      "email": "test@buckhill.co.uk",
+     *                      "email": "test@test.co.uk",
      *                      "password": "password123",
      *                      "password_confirmation": "password123",
      *                      "avatar": "82110194-fdc6-4872-9adb-4776e28deac3",
@@ -205,7 +205,7 @@ class UserController extends Controller
      *                 example={
      *                      "first_name": "Test",
      *                      "last_name": "Admin",
-     *                      "email": "test@buckhill.co.uk",
+     *                      "email": "test@test.co.uk",
      *                      "password": "password123",
      *                      "password_confirmation": "password123",
      *                      "avatar": "82110194-fdc6-4872-9adb-4776e28deac3",

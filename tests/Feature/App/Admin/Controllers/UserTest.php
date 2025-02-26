@@ -86,7 +86,7 @@ class UserTest extends BuckhillBaseTesting
     {
         $this->expectException(\Illuminate\Validation\ValidationException::class);
         $data = [
-            'email' => 'test@buckhill.com',
+            'email' => 'test@test.co.uk',
             'password' => 'password',
             'first_name' => 'Test',
             'last_name' => 'User'

@@ -48,7 +48,7 @@ class BasicAuthTest extends BuckhillBaseTesting
             'first_name' => 'Test',
             'last_name' => 'User',
             'uuid' => Str::uuid(),
-            'email' => 'usertest@buckhill.co.uk',
+            'email' => 'usertest@test.co.uk',
             'password' => Hash::make('testuser'),
             'avatar' => Str::uuid(),
             'address' => '5303 Lubowitz Creek Suite 678 Reingerhaven, ND 62609',

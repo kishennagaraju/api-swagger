@@ -17,7 +17,7 @@ class AuthServiceTest extends BuckhillBaseTesting
     {
         $request = new FormRequest();
         $request->replace([
-            'email' => 'admin@buckhill.co.uk',
+            'email' => 'admin@test.co.uk',
             'password' => 'admin'
         ]);
 
@@ -31,7 +31,7 @@ class AuthServiceTest extends BuckhillBaseTesting
     {
         $request = new FormRequest();
         $request->replace([
-            'email' => 'admin@buckhill.co.uk',
+            'email' => 'admin@test.co.uk',
             'password' => 'password'
         ]);
 
@@ -44,7 +44,7 @@ class AuthServiceTest extends BuckhillBaseTesting
     {
         $request = new FormRequest();
         $request->replace([
-            'email' => 'test@buckhill.com',
+            'email' => 'test@test.co.uk',
             'password' => 'password',
             'first_name' => 'Test',
             'last_name' => 'User',

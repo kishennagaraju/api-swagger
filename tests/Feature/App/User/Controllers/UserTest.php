@@ -63,7 +63,7 @@ class UserTest extends BuckhillBaseTesting
     public function test_user_create_success()
     {
         $data = [
-            'email' => 'test@buckhill.com',
+            'email' => 'test@test.co.uk',
             'password' => 'password',
             'first_name' => 'Test',
             'last_name' => 'User',
@@ -91,7 +91,7 @@ class UserTest extends BuckhillBaseTesting
     {
         $this->expectException(\Illuminate\Validation\ValidationException::class);
         $data = [
-            'email' => 'test@buckhill.com',
+            'email' => 'test@test.co.uk',
             'password' => 'password',
             'first_name' => 'Test',
             'last_name' => 'User'
@@ -110,7 +110,7 @@ class UserTest extends BuckhillBaseTesting
         $user = $this->getUser()->toArray();
 
         $data = [
-            'email' => 'test2131@buckhill.com',
+            'email' => 'test2131@test.co.uk',
             'password' => 'password',
             'first_name' => 'Test',
             'last_name' => 'User',
@@ -134,7 +134,7 @@ class UserTest extends BuckhillBaseTesting
         $user = $this->getUser()->toArray();
 
         $data = [
-            'email' => 'test2131@buckhill.com',
+            'email' => 'test2131@test.co.uk',
             'password' => 'password',
             'first_name' => 'Test',
             'last_name' => 'User',
@@ -157,7 +157,7 @@ class UserTest extends BuckhillBaseTesting
     {
         $this->expectException(ModelNotFoundException::class);
         $data = [
-            'email' => 'test2131@buckhill.com',
+            'email' => 'test2131@test.co.uk',
             'password' => 'password',
             'first_name' => 'Test',
             'last_name' => 'User',
@@ -234,7 +234,7 @@ class UserTest extends BuckhillBaseTesting
     {
         $this->expectException(ModelNotFoundException::class);
         $this->post('api/v1/user/forgot-password', [
-            'email' => 'test1234@buckhill.com'
+            'email' => 'test1234@test.co.uk'
         ]);
     }
 
