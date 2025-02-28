@@ -48,7 +48,8 @@ class JwtService {
             $payload['exp'] = $data['exp'];
         }
 
-        $jwtToken = JWT::encode($payload, $this->getPrivateKey(), 'RS256');
+        $keyDetails = $this->getPrivateKey();
+        $jwtToken = JWT::encode($payload, $keyDetails['key'], $keyDetails['algo']);
 
         if ($storeToken) {
             $this->getUserModel()->storeJwtTokenDetailsForUser($data['uuid'], [
@@ -75,8 +76,11 @@ class JwtService {
     public function decodeJwtToken(string $jwtToken, bool $updateUser = true): object
     {
         JWT::$timestamp = time();
+        $publicKeyDetails = $this->getPublicKey();
 
-        return JWT::decode($jwtToken, new Key($this->getPublicKey(), 'RS256'));
+        $decoded = JWT::decode($jwtToken, new Key($publicKeyDetails['key'], $publicKeyDetails['algo']));
+
+        return JWT::decode($jwtToken, new Key($publicKeyDetails['key'], $publicKeyDetails['algo']));
     }
 
     /**
@@ -103,12 +107,22 @@ class JwtService {
      *
      * @return mixed
      */
-    private function getPrivateKey()
+    private function getPrivateKey(): array
     {
-        return openssl_pkey_get_private(
-            file_get_contents(Config::get('services.jwt.private_key_file')),
-            Config::get('services.jwt.private_key_passphrase')
-        );
+        if (file_exists(Config::get('services.jwt.private_key_file'))) {
+            return [
+                'key' => openssl_pkey_get_private(
+                    file_get_contents(Config::get('services.jwt.private_key_file')),
+                    Config::get('services.jwt.private_key_passphrase')
+                ),
+                'algo' => Config::get('services.jwt.file_algo'),
+            ];
+        }
+
+        return [
+            'key' => Config::get('services.jwt.private_key_passphrase'),
+            'algo' => Config::get('services.jwt.key_algo'),
+        ];
     }
 
     /**
@@ -118,7 +132,17 @@ class JwtService {
      */
     private function getPublicKey()
     {
-        return openssl_pkey_get_details($this->getPrivateKey())['key'];
+        if (file_exists(Config::get('services.jwt.private_key_file'))) {
+            return [
+                'key' => openssl_pkey_get_details($this->getPrivateKey()['key'])['key'],
+                'algo' => Config::get('services.jwt.file_algo'),
+            ];
+        }
+
+        return [
+            'key' => Config::get('services.jwt.private_key_passphrase'),
+            'algo' => Config::get('services.jwt.key_algo'),
+        ];
     }
 
     /**
