@@ -52,7 +52,7 @@ class BasicAuthAdmin
             return response()->json(['status' => false, 'message' => 'User Not Found'])->setStatusCode(404);
         }
 
-        $request->merge(['user' => $tokenDetails, 'token' => $jwtToken]);
+        $request->merge(['user' => (array) $tokenDetails, 'token' => $jwtToken]);
 
         return $next($request);
     }

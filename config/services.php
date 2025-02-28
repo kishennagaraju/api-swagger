@@ -35,6 +35,8 @@ return [
         'private_key_passphrase' => env('JWT_PASSPHRASE', '12345678'),
         'private_key_file' => storage_path('app/keys/key'),
         'public_key_file' => storage_path('app/keys/key.pub'),
+        'key_algo' => 'HS256',
+        'file_algo' => 'RS256',
     ]
 
 ];
