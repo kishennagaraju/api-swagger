@@ -9,7 +9,7 @@
         "ext-openssl": "*",
         "barryvdh/laravel-dompdf": "^1.0",
         "darkaonline/l5-swagger": "^8.3",
-        "firebase/php-jwt": "^6.0",
+        "firebase/php-jwt": "^7.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "v9.52.20",
